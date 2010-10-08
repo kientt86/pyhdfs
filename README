@@ -1,0 +1,33 @@
+Python Bindings for HDFS
+Author: Kien Trinh
+Email: kientt86@gmail.com
+Date: Oct 08 2010
+
+
+This is python extending module use to access HDFS.
+
+Prerequisites:
+	+ C module libhdfs installed
+	+ Python module numpy installed
+
+Install:
+	+ git clone git@github.com:kientt86/libhdfs.git
+	+ cd libhdfs
+	+ python setup.py install
+	
+Using:
+	>>import hdfs
+	>>handle = hdfs.connect("localhost",54310)
+	>>hdfs.exist(handle,"/mydata")
+	>>0
+	>>hdfs.write(handle,"/mydata","Hello World")
+	>>11
+	>>hdfs.exist(handle,"/mydata")
+	>>1
+	>>r = hdfs.read(handle,"/mydata")
+	>>print r.data
+	>>Hello World
+	>>hdfs.delete(handle,"/mydata")
+	>>hdfs.exist(handle,"/mydata")
+	>>0
+	>>hdfs.disconnect()
