@@ -9,11 +9,11 @@ This is python extending module use to access HDFS.
 Prerequisites:
 	+ C module libhdfs installed.
 	+ Python module numpy installed.
-	+ Please review setup.cfg to change to the correct enviroment.
 
 Install:
 	+ git clone git@github.com:kientt86/libhdfs.git
 	+ cd libhdfs
+	+ Review setup.cfg to change to the correct enviroment
 	+ python setup.py install
 
 Before using this module you have to export some enviroment variables, there are 2 varaiables you need to export is LD_LIBRARY_PATH and CLASSPATH
