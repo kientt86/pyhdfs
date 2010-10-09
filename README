@@ -7,13 +7,23 @@ Date: Oct 08 2010
 This is python extending module use to access HDFS.
 
 Prerequisites:
-	+ C module libhdfs installed
-	+ Python module numpy installed
+	+ C module libhdfs installed.
+	+ Python module numpy installed.
+	+ Please review setup.cfg to change to the correct enviroment.
 
 Install:
 	+ git clone git@github.com:kientt86/libhdfs.git
 	+ cd libhdfs
 	+ python setup.py install
+
+Before using this module you have to export some enviroment variables, there are 2 varaiables you need to export is LD_LIBRARY_PATH and CLASSPATH
+LD_LIBRARY_PATH : Need to point to some shared object file like: libhdfs.so,libjvm.so
+CLASSPATH       : Point to some jar files which is used by Hadoop. To optain this variable, put the command "echo $CLASSPATH" at the end of bin/hadoop in the location you install hadoop
+
+
+You can get my config as an example:
+    export LD_LIBRARY_PATH=/opt/hadoop/build/c++/Linux-amd64-64/lib/:/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/amd64/server/
+    export CLASSPATH=/opt/hadoop/bin/../conf:/usr/local/java/lib/tools.jar:/opt/hadoop/bin/../build/classes:/opt/hadoop/bin/../build:/opt/hadoop/bin/../build/test/classes:/opt/hadoop/bin/../build/tools:/opt/hadoop/bin/..:/opt/hadoop/bin/../hadoop-0.20.2-core.jar:/opt/hadoop/bin/../lib/commons-cli-1.2.jar:/opt/hadoop/bin/../lib/commons-codec-1.3.jar:/opt/hadoop/bin/../lib/commons-el-1.0.jar:/opt/hadoop/bin/../lib/commons-httpclient-3.0.1.jar:/opt/hadoop/bin/../lib/commons-logging-1.0.4.jar:/opt/hadoop/bin/../lib/commons-logging-api-1.0.4.jar:/opt/hadoop/bin/../lib/commons-net-1.4.1.jar:/opt/hadoop/bin/../lib/core-3.1.1.jar:/opt/hadoop/bin/../lib/hsqldb-1.8.0.10.jar:/opt/hadoop/bin/../lib/jasper-compiler-5.5.12.jar:/opt/hadoop/bin/../lib/jasper-runtime-5.5.12.jar:/opt/hadoop/bin/../lib/jets3t-0.6.1.jar:/opt/hadoop/bin/../lib/jetty-6.1.14.jar:/opt/hadoop/bin/../lib/jetty-util-6.1.14.jar:/opt/hadoop/bin/../lib/junit-3.8.1.jar:/opt/hadoop/bin/../lib/kfs-0.2.2.jar:/opt/hadoop/bin/../lib/log4j-1.2.15.jar:/opt/hadoop/bin/../lib/mockito-all-1.8.0.jar:/opt/hadoop/bin/../lib/oro-2.0.8.jar:/opt/hadoop/bin/../lib/servlet-api-2.5-6.1.14.jar:/opt/hadoop/bin/../lib/slf4j-api-1.4.3.jar:/opt/hadoop/bin/../lib/slf4j-log4j12-1.4.3.jar:/opt/hadoop/bin/../lib/xmlenc-0.52.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/commons-cli-1.2.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/commons-codec-1.3.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/commons-el-1.0.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/commons-httpclient-3.0.1.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/commons-logging-1.0.4.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/commons-logging-api-1.0.4.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/commons-net-1.4.1.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/core-3.1.1.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/jasper-compiler-5.5.12.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/jasper-runtime-5.5.12.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/jets3t-0.6.1.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/jetty-6.1.14.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/jetty-util-6.1.14.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/junit-3.8.1.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/log4j-1.2.15.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/mockito-all-1.8.0.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/oro-2.0.8.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/servlet-api-2.5-6.1.14.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/slf4j-api-1.4.3.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/slf4j-log4j12-1.4.3.jar:/opt/hadoop/bin/../build/ivy/lib/Hadoop/common/xmlenc-0.52.jar:/opt/hadoop/bin/../lib/jsp-2.1/jsp-2.1.jar:/opt/hadoop/bin/../lib/jsp-2.1/jsp-api-2.1.jar
 	
 Using:
 	>>import hdfs
