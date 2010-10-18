@@ -7,4 +7,4 @@ setup(name='hdfs',
         author='Kien Trinh',
         author_email='kientt86@gmail.com',
         url='git@github.com:kientt86/libhdfs.git',
-        ext_modules=[Extension(name='hdfs', sources=['hdfs.c'],  libraries=['hdfs','jvm'])])
+        ext_modules=[Extension(name='pyhdfs', sources=['pyhdfs.c'],  libraries=['hdfs','jvm'])])
