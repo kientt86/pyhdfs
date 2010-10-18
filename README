@@ -39,3 +39,6 @@ Using:
     >>print data.data
     >>Hello World
     >>fs.disconnect()
+    
+**TODO: HDFS FileInfo and some Utilities will be the next target.
+    
